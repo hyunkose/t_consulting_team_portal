@@ -1,0 +1,37 @@
+{% load static %}
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            데이터 조회
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'read_empinfo' %}">사원 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'read_statusinfo' %}">재직 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'read_projectinfo' %}">프로젝트 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'read_vacation_info' %}">휴가 정보</a></li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            데이터 신규 추가
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'create_empinfo' %}">사원 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_statusinfo' %}">재직 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_projectinfo' %}">프로젝트 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_vacationinfo' %}">휴가 정보</a></li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            데이터 삭제
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'delete_emp' %}">사원 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'delete_status' %}">재직 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'delete_project' %}">프로젝트 정보</a></li>
+            <li><a class="dropdown-item" href="{% url 'delete_vacation' %}">휴가 정보</a></li>
+        </ul>
+    </li>
+</ul>

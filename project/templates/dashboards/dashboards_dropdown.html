@@ -1,0 +1,13 @@
+{% load static %}
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            대시보드 목록
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'dashboards_emp' %}">인원현황</a></li>
+            <li><a class="dropdown-item" href="{% url 'dashboards_project' %}">프로젝트 현황</a></li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,16 @@
+.dashboard-dropdown .nav-link{
+    width: 10%;
+}
+
+.dropdown-wrapper{
+    width: 1700px;
+    margin: 20px auto;
+}
+
+.navbar-nav{
+    width: 9%;
+}
+
+.dashboard-wrapper{
+    display: block;
+}

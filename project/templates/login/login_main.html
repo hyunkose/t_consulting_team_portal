@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_form.css' %}">
+    <script src="{% static 'js/authentication.js' %}" defer></script>
+    <title>Tableau Consulting 팀 인력 관리 포탈</title>
+</head>
+<body>
+    <div class="nav-wrapper">
+        {% include 'navbar.html' %}
+    </div>
+    <div class="card text-bg-light-mb-3 login-wrapper">
+        <div class="card-body">
+            {% include 'login/login_form.html' %}
+        </div>
+    </div>
+</body>
+</html>

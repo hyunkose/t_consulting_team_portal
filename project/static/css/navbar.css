@@ -1,0 +1,30 @@
+nav.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.page-dropdowns{
+    display: flex;
+}
+.page-dropdowns a, .page-dropdowns a:hover{
+    text-decoration: none;
+}
+
+.page-dropdowns .h6{
+    color: white;
+    font-weight: normal;
+    margin: 0 15px;
+}
+
+.nav-wrapper{
+    display: flex;
+    width: 100%;
+}
+
+.nav-wrapper .navbar{
+    width: 100%;
+}
+
+.welcome-letters{
+    margin-left: 30px;
+}

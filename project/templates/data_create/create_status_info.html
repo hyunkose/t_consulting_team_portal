@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/crud_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/data_crud_dropdowns.css' %}">
+
+    <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/status_create.js' %}"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" defer></script>  
+    <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" defer></script> 
+
+    <title>Tableau Consulting 팀 인력 관리 포탈</title>
+</head>
+<body>
+    <div class="nav-wrapper">
+        {% include 'navbar.html' %}
+    </div>
+    <div class="container-fluid dropdown-wrapper">
+        {% include 'data_crud_dropdowns.html' %}
+    </div>
+    <div class="form-wrapper">
+        <div class="card text-bg-light-mb-3 form-content">
+            <div class="card-body">
+                <h5 class="card-title">재직 정보 신규 추가</h5>
+
+                    <p class="h6">사원 이메일</p>
+                    <select class="form-select" aria-label="email-selector" id="email" onchange="get_emp_name()">
+                        <option value="" selected>선택</option>
+                        {% for email, emp_name  in emp_obj %}
+                        <option value="{{ email }}" aria-label="{{ emp_name }}">{{ email }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <p class="h6">사원명</p>
+                    <input class="form-control" type="text" id="emp-name" disabled>
+
+                    <p class="h6">재직여부</p>
+                    <select class="form-select" aria-label="status-selector" id="emp-status" onchange="show_date_field()">
+                        <option value="" selected>선택</option>
+                        <option value="휴직">휴직</option>
+                        <option value="퇴사">퇴사</option>
+                    </select>
+
+                    <p class="h6" id="rest-start-date-label" style="display: none;">휴직 시작일</p>
+                    <input class="form-control" type = "date" name = "date" value="" id="rest-start-date" style="display: none;">
+
+                    <p class="h6" id="rest-end-date-label" style="display: none;">휴직 종료일</p>
+                    <input class="form-control" type = "date" name = "date" value="" id="rest-end-date" style="display: none;">
+
+                    <p class="h6" id="leave-date-label" style="display: none;">퇴사일</p>
+                    <input class="form-control" type = "date" name = "date" value="" id="leave-date" style="display: none;">
+                    
+                <button class="submit-btn" onclick="emp_info_submit()">완료</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

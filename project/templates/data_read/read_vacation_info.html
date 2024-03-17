@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/crud_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/data_crud_dropdowns.css' %}">
+
+    <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script> 
+
+    <title>Tableau Consulting 팀 인력 관리 포탈</title>
+</head>
+<body>
+    <div class="nav-wrapper">
+        {% include 'navbar.html' %}
+    </div>
+    <div class="container-fluid dropdown-wrapper">
+        {% include 'data_crud_dropdowns.html' %}
+    </div>
+    <div class="main-content-wrapper">
+        <div class="card text-bg-light-mb-3 main-content">
+            <div class="card-body">
+                <h5 class="card-title">휴가 정보</h5>
+                <table class="table table-scroll table-striped secondary">
+                    <tr>
+                        <th>사원명</th>
+                        <th>휴가 시작일</th>
+                        <th>휴가 종료일</th>
+                        <th>신청 휴가 종류</th>
+                        <th>휴가 신청일수</th>
+                    </tr>
+                    {% for vacation in vacation_obj %}
+                    <tr>
+                        <td>{{ vacation.emp_cd }}</td>
+                        <td>{{ vacation.vacation_start_date }}</td>
+                        <td>{{ vacation.vacation_end_date }}</td>
+                        <td>{{ vacation.vacation_type }}</td>
+                        <td>{{ vacation.vacation_days }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

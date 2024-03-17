@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/crud_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/data_crud_dropdowns.css' %}">
+
+    <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+
+    <title>Tableau Consulting 팀 인력 관리 포탈</title>
+</head>
+<body>
+    <div class="nav-wrapper">
+        {% include 'navbar.html' %}
+    </div>
+    <div class="container-fluid dropdown-wrapper">
+        {% include 'data_crud_dropdowns.html' %}
+    </div>
+    <div class="main-content-wrapper">
+        <div class="card text-bg-light-mb-3 main-content">
+            <div class="card-body">
+                <h5 class="card-title">프로젝트 정보</h5>
+
+                <table class="table table-scroll table-striped secondary">
+                    <tr>
+                        <th>사원명</th>
+                        <th>고객사</th>
+                        <th>업무 투입일</th>
+                        <th>업무 종료일</th>
+                        <th>고객사 위치</th>
+                        <th>업무 상세</th>
+                    </tr>
+                    {% for proj in proj_obj %}
+                    <tr>
+                        <td>{{ proj.emp_cd }}</td>
+                        <td>{{ proj.client }}</td>
+                        <td>{{ proj.project_start_date }}</td>
+                        <td>{{ proj.project_end_date }}</td>
+                        <td>{{ proj.client_location }}</td>
+                        <td>{{ proj.jobs }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+.dropdown-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+ul.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    margin: 3% auto 0 auto;
+}
+
+li.nav-item.dropdown{
+    margin: 0 20px;
+    padding: 5px;
+}

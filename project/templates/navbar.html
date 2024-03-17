@@ -1,0 +1,15 @@
+{% load static %}
+
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid header-wrapper logo-section">
+        <a class="navbar-brand" href="{% url 'dashboards_emp' %}">Tableau Consulting 팀 인력 관리 포탈</a>
+        <div class="page-dropdowns">
+            <a class="dashboard-link" href="{% url 'dashboards_emp' %}"><p class="h6">Dashboards</p></a>
+            <a class="crud-link" href="{% url 'read_empinfo' %}"><p class="h6">Data Management</p></a>
+            {% if user.is_authenticated %}
+            <a class="welcome-letters" href="#"><p class="h6">Welcome! {{ user.get_username }}</p></a>
+            <a class="crud-link" href="{% url 'logout' %}"><p class="h6">Logout</p></a>
+            {% endif %}    
+        </div>   
+    </div>
+</nav>
